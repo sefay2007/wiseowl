@@ -41,17 +41,23 @@ export default function RevenueLineChart() {
       <div className="flex-1">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
-            <XAxis dataKey="date" tick={{ fontSize: 12 }} />
-            <YAxis tick={{ fontSize: 12 }} />
-            <Tooltip />
-            <Line
-              type="monotone"
-              dataKey="revenue"
-              stroke="#2563eb"
-              strokeWidth={3}
-              dot={false}
-            />
-          </LineChart>
+  <XAxis dataKey="date" tick={{ fontSize: 12 }} />
+  <YAxis tick={{ fontSize: 12 }} />
+
+  <Tooltip
+    labelStyle={{ color: "#000", fontWeight: 500 }}
+    itemStyle={{ color: "#2563eb" }}
+  />
+
+  <Line
+    type="monotone"
+    dataKey="revenue"
+    stroke="#2563eb"
+    strokeWidth={3}
+    dot={false}
+  />
+</LineChart>
+
         </ResponsiveContainer>
       </div>
     </div>

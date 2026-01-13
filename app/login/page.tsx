@@ -55,16 +55,18 @@ export default function LoginPage() {
       <h1 className="text-black text-2xl font-semibold mb-6">Log in</h1>
 
       <div className="mb-4">
-        <label className="block text-sm text-gray-600 mb-1">
+        <label className="block text-sm text-black mb-1">
           Email address
         </label>
         <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
+  type="email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  className="w-full border rounded-md px-3 py-2 
+             text-black placeholder-gray-400
+             focus:outline-none focus:ring-2 focus:ring-blue-500"
+  required
+/>
       </div>
 
       <div className="mb-2">

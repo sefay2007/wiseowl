@@ -20,7 +20,7 @@ const menuItems = [
   },
   {
     label: "Meta Ad stats",
-    href: "#",
+    href: "/metastats",
     icon: BarChart3,
   },
   {
