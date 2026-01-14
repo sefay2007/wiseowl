@@ -8,18 +8,60 @@ import {
   Tooltip,
 } from "recharts";
 
-const data = [
-  { name: "Dress", value: 44 },
-  { name: "Jackets", value: 23 },
-  { name: "Shoes", value: 18 },
-  { name: "Accessories", value: 12 },
-];
+/* ===============================
+   Helpers
+================================ */
 
+// Seeded random (deterministisch)
+function seededRandom(seed: string) {
+  let hash = 0;
+  for (let i = 0; i < seed.length; i++) {
+    hash = seed.charCodeAt(i) + ((hash << 5) - hash);
+  }
+
+  return () => {
+    hash = (hash * 9301 + 49297) % 233280;
+    return hash / 233280;
+  };
+}
+
+/* ===============================
+   Config
+================================ */
+
+const CATEGORIES = ["Dress", "Jackets", "Shoes", "Accessories"];
 const COLORS = ["#2563eb", "#60a5fa", "#93c5fd", "#bfdbfe"];
 
-const totalOrders = data.reduce((sum, d) => sum + d.value, 0);
+/* ===============================
+   Component
+================================ */
 
-export default function OrdersDonutChart() {
+export default function OrdersDonutChart({
+  totalOrders,
+  seed,
+}: {
+  totalOrders: number;
+  seed: string; // bv selectedDate
+}) {
+  // deterministische verdeling per datum
+  const rand = seededRandom(seed);
+
+  const weights = CATEGORIES.map(() => rand());
+  const weightSum = weights.reduce((a, b) => a + b, 0);
+
+  let remaining = totalOrders;
+
+  const data = CATEGORIES.map((name, i) => {
+    const value =
+      i === CATEGORIES.length - 1
+        ? remaining // rest naar laatste categorie
+        : Math.round((weights[i] / weightSum) * totalOrders);
+
+    remaining -= value;
+
+    return { name, value };
+  });
+
   return (
     <div className="h-full flex p-6">
       {/* Chart */}
@@ -45,7 +87,9 @@ export default function OrdersDonutChart() {
       {/* Legend */}
       <div className="w-1/2 pl-6 flex flex-col justify-center">
         <p className="text-sm text-gray-500 mb-2">Total orders</p>
-        <p className="text-black text-2xl font-semibold mb-4">{totalOrders}</p>
+        <p className="text-black text-2xl font-semibold mb-4">
+          {totalOrders}
+        </p>
 
         <div className="space-y-2">
           {data.map((item, i) => (

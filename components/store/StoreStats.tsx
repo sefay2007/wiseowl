@@ -1,6 +1,7 @@
 import StatCard from "../cards/StatCard";
 import Image from "next/image";
-export default function StoreStats() {
+
+export default function StoreStats({ stats }: any) {
   return (
     <div>
       <div className="flex items-center gap-2 mb-3 font-semibold text-gray-700">
@@ -16,11 +17,12 @@ export default function StoreStats() {
 
 
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-        <StatCard title="Revenue" value="€13.397,95" />
-        <StatCard title="Orders" value="97" />
-        <StatCard title="Sessions" value="1.203" />
-        <StatCard title="Add to cart" value="214" />
-        <StatCard title="Conversion" value="2.4%" />
+        <StatCard title="Revenue" value={stats.revenue} />
+        <StatCard title="Orders" value={stats.orders.toString()} />
+        <StatCard title="Sessions" value={stats.sessions.toLocaleString("nl-NL")} />
+        <StatCard title="Add to cart" value={stats.addToCart.toString()} />
+        <StatCard title="Conversion" value={stats.conversion} />
+
       </div>
     </div>
   );

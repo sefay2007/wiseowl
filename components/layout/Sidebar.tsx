@@ -29,19 +29,9 @@ const menuItems = [
     icon: Users,
   },
   {
-    label: "Feature 4",
-    href: "#",
+    label: "Ad Analysis",
+    href: "/stats-goal",
     icon: Sparkles,
-  },
-  {
-    label: "Feature 5",
-    href: "#",
-    icon: Layers,
-  },
-  {
-    label: "Feature 6",
-    href: "#",
-    icon: Settings,
   },
 ];
 
@@ -49,7 +39,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 border-r bg-white px-4 py-6">
+    <aside className="w-64 border-r border-gray-200 bg-white px-4 py-6">
       {/* Store */}
       <div className="flex items-center gap-2 mb-6 font-semibold text-gray-700">
         <Image src="/img/shopify.png" alt="Shopify" width={16} height={16} />
