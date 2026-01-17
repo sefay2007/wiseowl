@@ -63,7 +63,7 @@ export default function OrdersDonutChart({
   });
 
   return (
-    <div className="h-full flex p-6">
+    <div className="h-full flex p-6 border border-gray-200 rounded-xl shadow-sm">
       {/* Chart */}
       <div className="w-1/2 h-full">
         <ResponsiveContainer width="100%" height="100%">

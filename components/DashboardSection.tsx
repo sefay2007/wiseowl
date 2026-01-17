@@ -1,15 +1,9 @@
 export default function HeroDashboardSection() {
   return (
-    <section
-      className="
-        bg-[linear-gradient(to_bottom,#ffffff_0%,#ffffff_50%,#116cf3_50%,#116cf3_100%)]
-        py-32
-        text-center
-      "
-    >
+    <section className="bg-gradient-to-b from-white via-white to-[#116cf3] py-32">
       {/* HERO CONTENT */}
-      <div className="mx-auto max-w-3xl mb-24">
-        <h1 className="text-[42px] font-bold leading-tight text-gray-900 mb-6">
+      <div className="mx-auto max-w-3xl mb-24 text-center">
+        <h1 className="text-[60px] font-bold leading-tight text-gray-900 mb-6">
           <span className="text-[#116cf3]">Understand</span> what really <br />
           drives your <span className="text-[#116cf3]">sales</span>
         </h1>
@@ -20,16 +14,7 @@ export default function HeroDashboardSection() {
           smarter decisions.
         </p>
 
-        <button
-          className="
-            inline-flex items-center justify-center
-            rounded-lg bg-[#116cf3]
-            px-6 py-3
-            text-sm font-semibold text-white
-            hover:bg-[#0e5bd0]
-            transition
-          "
-        >
+        <button className="inline-flex items-center justify-center rounded-lg bg-[#116cf3] px-7 py-3 text-sm font-semibold text-white hover:bg-[#0e5bd0] transition">
           BOOK DEMO →
         </button>
       </div>
@@ -38,54 +23,70 @@ export default function HeroDashboardSection() {
       <div className="flex justify-center">
         <div
           className="
-            grid
-            max-w-[900px] w-full
+            grid max-w-[920px] w-full
             grid-cols-[1fr_1fr_1.4fr]
-            grid-rows-[140px_220px]
-            gap-5
+            grid-rows-[150px_230px]
+            gap-6
             rounded-3xl
-            bg-[#d9d9d9]
+            bg-white/80
+            backdrop-blur
+            border border-gray-200
+            shadow-xl
             p-6
           "
         >
-          {/* Card 1 */}
-          <div className="rounded-2xl bg-white p-5 text-left flex flex-col justify-center">
-            <h4 className="text-sm font-medium text-gray-500 mb-1">Omzet</h4>
-            <p className="text-2xl font-semibold text-gray-900">€2.042</p>
+          {/* Omzet */}
+          <div className="rounded-2xl bg-white p-6 text-left shadow-sm hover:shadow-md transition">
+            <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">
+              Revenue
+            </p>
+            <p className="text-3xl font-bold text-gray-900">€52.247</p>
           </div>
 
-          {/* Card 2 */}
-          <div className="rounded-2xl bg-white p-5 text-left flex flex-col justify-center">
-            <h4 className="text-sm font-medium text-gray-500 mb-1">Conversie</h4>
-            <p className="text-2xl font-semibold text-gray-900">3.4%</p>
+          {/* Conversie */}
+          <div className="rounded-2xl bg-white p-6 text-left shadow-sm hover:shadow-md transition">
+            <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">
+              Conversion
+            </p>
+            <p className="text-3xl font-bold text-[#116cf3]">3.4%</p>
           </div>
 
-          {/* Card 3 (large left) */}
-          <div
-            className="
-              col-span-2
-              row-start-2
-              rounded-2xl bg-white p-5 text-left
-              flex flex-col justify-center
-            "
-          >
-            <h4 className="text-sm font-medium text-gray-500 mb-1">Bezoekers</h4>
-            <p className="text-2xl font-semibold text-gray-900">12.483</p>
+          {/* Bezoekers */}
+          <div className="col-span-2 rounded-2xl bg-white p-6 text-left shadow-sm hover:shadow-md transition">
+            <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">
+              Visitors
+            </p>
+            <p className="text-4xl font-bold text-gray-900">18.483</p>
           </div>
 
-          {/* Card 4 (large right) */}
-          <div
-            className="
-              row-span-2
-              rounded-2xl bg-white p-5 text-left
-              flex flex-col justify-center
-            "
-          >
-            <h4 className="text-sm font-medium text-gray-500 mb-1">Sales</h4>
-            <p className="text-2xl font-semibold text-gray-900">342</p>
+          {/* Sales */}
+<div
+  className="
+    col-start-3
+    row-start-1
+    row-span-2
+    rounded-2xl
+    bg-white
+    p-6
+    text-left
+    shadow-sm
+    hover:shadow-md
+    transition
+    flex
+    flex-col
+    justify-between
+  "
+>
+            <p className="text-xs uppercase tracking-wide text-gray-400">
+              Sales
+            </p>
+            <p className="text-5xl font-bold text-gray-900">1342</p>
+            <p className="text-sm text-green-600 font-medium">
+              ▲ +12% vs Last Month
+            </p>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

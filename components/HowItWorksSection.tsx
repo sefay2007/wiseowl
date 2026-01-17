@@ -2,6 +2,12 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import {
+  BarChart3,
+  Globe,
+  Layers,
+  Stethoscope,
+} from 'lucide-react'
 
 const FEATURES = [
   {
@@ -10,6 +16,7 @@ const FEATURES = [
     description:
       'Gain clear insights into how your ads perform across campaigns, creatives, and markets.',
     image: '/img/feature-ads.png',
+    icon: BarChart3,
   },
   {
     id: 'website',
@@ -17,6 +24,7 @@ const FEATURES = [
     description:
       'Understand how users behave on your website and where conversions are won or lost.',
     image: '/img/feature-website.png',
+    icon: Globe,
   },
   {
     id: 'concept',
@@ -24,6 +32,7 @@ const FEATURES = [
     description:
       'Compare ad concepts to see which angles, messages, and visuals truly drive performance.',
     image: '/img/feature-concept.png',
+    icon: Layers,
   },
   {
     id: 'diagnosis',
@@ -31,13 +40,14 @@ const FEATURES = [
     description:
       'Get a clear diagnosis of performance issues with actionable recommendations.',
     image: '/img/feature-diagnosis.png',
+    icon: Stethoscope,
   },
 ]
 
 export default function HowItWorksSection() {
   const [active, setActive] = useState(FEATURES[0].id)
-
   const activeFeature = FEATURES.find(f => f.id === active)!
+  const ActiveIcon = activeFeature.icon
 
   return (
     <section className="py-24 bg-white">
@@ -54,10 +64,11 @@ export default function HowItWorksSection() {
 
         {/* Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* Left cards */}
+          {/* LEFT: Feature list */}
           <div className="space-y-4">
             {FEATURES.map(feature => {
               const isActive = feature.id === active
+              const Icon = feature.icon
 
               return (
                 <div
@@ -71,7 +82,8 @@ export default function HowItWorksSection() {
                       : 'bg-gray-50 hover:bg-gray-100'}
                   `}
                 >
-                  <h3 className="font-medium text-gray-900 flex items-center gap-2">
+                  <h3 className="font-medium text-gray-900 flex items-center gap-3">
+                    <Icon className="h-5 w-5 text-blue-600" />
                     {feature.title}
                   </h3>
 
@@ -90,16 +102,34 @@ export default function HowItWorksSection() {
             })}
           </div>
 
-          {/* Right image */}
-          <div className="relative w-full h-[360px] rounded-2xl bg-gray-100 overflow-hidden">
+          {/* RIGHT: Visual */}
+          <div className="relative w-full h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-50 to-white border border-gray-200 shadow-lg">
+            {/* Icon badge */}
+            <div className="absolute top-5 left-5 z-10 flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow">
+              <ActiveIcon className="h-5 w-5 text-blue-600" />
+              <span className="text-sm font-medium text-gray-900">
+                {activeFeature.title}
+              </span>
+            </div>
+
+            {/* Image */}
             <Image
-              key={activeFeature.image}
-              src={activeFeature.image}
-              alt={activeFeature.title}
-              fill
-              className="object-cover transition-opacity duration-300"
-              priority
-            />
+  key={activeFeature.image}
+  src={activeFeature.image}
+  alt={activeFeature.title}
+  fill
+  className="
+    object-contain
+    p-10
+    transition-opacity
+    duration-300
+  "
+  priority
+/>
+
+
+            {/* Soft overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent" />
           </div>
         </div>
       </div>

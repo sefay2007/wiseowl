@@ -13,7 +13,6 @@ export default function CompetitorsPage() {
   const [competitors, setCompetitors] = useState<Competitor[]>([]);
   const [open, setOpen] = useState(false);
 
-  // ⬅️ LAAD VAN LOCALSTORAGE
   useEffect(() => {
     setCompetitors(getCompetitors());
   }, []);
@@ -40,7 +39,15 @@ export default function CompetitorsPage() {
 
           <button
             onClick={() => setOpen(true)}
-            className="bg-blue-600 text-white px-4 py-2 rounded"
+            className="bg-blue-600 rounded bg-blue-600 text-white px-4 py-2 rounded-md text-sm
+    transition-all duration-200 ease-out
+    hover:bg-blue-700
+    hover:shadow-md
+    active:translate-y-0
+    active:shadow-sm
+    focus:outline-none
+    cursor-pointer
+    focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
           >
             + Add new store
           </button>

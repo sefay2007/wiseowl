@@ -55,7 +55,6 @@ export default function AddCompetitorModal({ isOpen, onClose, onAdd }: Props) {
       <div className="relative bg-white w-full max-w-3xl rounded-xl shadow-xl p-6">
         <div className="flex justify-between mb-6">
           <h2 className="text-xl font-semibold">Add new competitor</h2>
-          <button onClick={onClose}><X /></button>
         </div>
 
         <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-4">
@@ -76,10 +75,18 @@ export default function AddCompetitorModal({ isOpen, onClose, onAdd }: Props) {
           </div>
 
           <div className="md:col-span-2 flex justify-end gap-3 mt-6">
-            <button type="button" onClick={onClose} className="border px-4 py-2 rounded">
+            <button type="button" onClick={onClose} className="border px-4 py-2 rounded cursor-pointer">
               Cancel
             </button>
-            <button type="submit" className="bg-blue-600 text-white px-5 py-2 rounded">
+            <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm
+    transition-all duration-200 ease-out
+    hover:bg-blue-700
+    hover:shadow-md
+    active:translate-y-0
+    active:shadow-sm
+    focus:outline-none
+    cursor-pointer
+    focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
               Save competitor
             </button>
           </div>

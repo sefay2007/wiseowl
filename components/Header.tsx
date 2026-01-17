@@ -80,7 +80,7 @@ export default function Header() {
               {/* Avatar */}
               <button
                 onClick={() => setOpen(!open)}
-                className="w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100 transition"
+                className="w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100 transition cursor-pointer"
               >
                 👤
               </button>
@@ -91,14 +91,14 @@ export default function Header() {
     
     <button
       onClick={goToDashboard}
-      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+      className="cursor-pointer w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
     >
       Dashboard
     </button>
 
     <button
       onClick={handleLogout}
-      className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+      className="cursor-pointer w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
     >
       Log out
     </button>

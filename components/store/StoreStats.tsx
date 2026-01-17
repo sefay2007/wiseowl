@@ -21,8 +21,7 @@ export default function StoreStats({ stats }: any) {
         <StatCard title="Orders" value={stats.orders.toString()} />
         <StatCard title="Sessions" value={stats.sessions.toLocaleString("nl-NL")} />
         <StatCard title="Add to cart" value={stats.addToCart.toString()} />
-        <StatCard title="Conversion" value={stats.conversion} />
-
+        <StatCard title="Conversion" value={`${(stats.conversion).toFixed(2)}%`} />
       </div>
     </div>
   );

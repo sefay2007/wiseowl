@@ -133,7 +133,7 @@ export default function DashboardPage() {
               type="date"
               value={selectedDate}
               max={todayISO}
-              className="px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-white text-gray-600"
+              className="px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-white text-gray-600 cursor-pointer"
               onChange={(e) => setSelectedDate(e.target.value)}
             />
 
@@ -144,7 +144,7 @@ export default function DashboardPage() {
             >
               <button
                 onClick={() => setCurrencyOpen((o) => !o)}
-                className="flex items-center gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-white text-gray-600"
+                className="flex items-center gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-white text-gray-600 cursor-pointer"
               >
                 <Euro className="w-4 h-4 text-gray-500" />
                 {currency === "EUR" ? "Euro" : "Dollar"}
@@ -157,7 +157,7 @@ export default function DashboardPage() {
                       setCurrency("EUR");
                       setCurrencyOpen(false);
                     }}
-                    className={`w-full px-3 py-2 text-sm text-left hover:bg-gray-100 ${
+                    className={`w-full px-3 py-2 text-sm text-left hover:bg-gray-100 cursor-pointer ${
                       currency === "EUR"
                         ? "font-medium text-gray-900"
                         : "text-gray-600"
@@ -171,7 +171,7 @@ export default function DashboardPage() {
                       setCurrency("USD");
                       setCurrencyOpen(false);
                     }}
-                    className={`w-full px-3 py-2 text-sm text-left hover:bg-gray-100 ${
+                    className={`w-full px-3 py-2 text-sm text-left hover:bg-gray-100 cursor-pointer ${
                       currency === "USD"
                         ? "font-medium text-gray-900"
                         : "text-gray-600"

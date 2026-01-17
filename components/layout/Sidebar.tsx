@@ -8,8 +8,8 @@ import {
   BarChart3,
   Users,
   Sparkles,
-  Settings,
-  Layers
+  TrendingUp,
+  Gauge,
 } from "lucide-react";
 
 const menuItems = [
@@ -45,9 +45,9 @@ export default function Sidebar() {
         <Image src="/img/shopify.png" alt="Shopify" width={16} height={16} />
         AnnaMariusOslo.com
       </div>
-  
-  {/* Divider */}
-<div className="my-4 border-t border-gray-200" />
+
+      {/* Divider */}
+      <div className="my-4 border-t border-gray-200" />
 
       {/* Menu */}
       <nav className="space-y-1">
@@ -75,6 +75,32 @@ export default function Sidebar() {
             </Link>
           );
         })}
+      </nav>
+
+      {/* Divider */}
+      <div className="my-6 border-t border-gray-200" />
+
+      {/* External tools */}
+      <nav className="space-y-1">
+        <a
+          href="https://trends.google.com/trends/explore?geo=NL&hl=nl"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 transition"
+        >
+          <TrendingUp className="h-4 w-4" />
+          Google Trends
+        </a>
+
+        <a
+          href="https://pagespeed.web.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 transition"
+        >
+          <Gauge className="h-4 w-4" />
+          Website Speedtest
+        </a>
       </nav>
     </aside>
   );

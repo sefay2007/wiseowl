@@ -41,7 +41,7 @@ export default function RegisterPage() {
               Already have account?{" "}
               <Link
                 href="/login"
-                className="text-blue-600 hover:underline font-medium"
+                className="text-blue-600 hover:underline font-medium cursor-pointer"
               >
                 Log in
               </Link>
@@ -132,7 +132,7 @@ export default function RegisterPage() {
 
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition"
+                className="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition cursor-pointer"
               >
                 Start for free
               </button>

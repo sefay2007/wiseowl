@@ -85,7 +85,7 @@ export default function RevenueLineChart({
   const data = generateHourlyRevenue(date, totalRevenue);
 
   return (
-    <div className="h-full flex flex-col p-6">
+    <div className="h-full flex flex-col p-6 border border-gray-200 rounded-xl shadow-sm">
       <div className="mb-4">
         <p className="text-sm text-gray-500">Revenue (day view)</p>
         <p className="text-2xl font-semibold text-gray-800">
