@@ -184,7 +184,6 @@ export default function StatsGoalPage() {
                       className="grid grid-cols-4 items-center text-sm py-3 border-b last:border-none"
                     >
                       <div className="flex items-center gap-2 font-medium">
-                        <span className="w-2.5 h-2.5 rounded-sm bg-gray-900" />
                         {row[0]}
                       </div>
                       <div>{row[1]}</div>
@@ -211,7 +210,7 @@ export default function StatsGoalPage() {
 
 function GoalCard({ title, value }: { title: string; value: string }) {
   return (
-    <div className="bg-[#F7FAFC] border border-gray-200 rounded-2xl p-4 shadow-sm relative">
+    <div className="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm relative">
       <p className="text-xs text-gray-500 font-medium">{title}</p>
       <p className="text-lg font-semibold text-gray-900 mt-1">{value}</p>
       <span className="absolute top-3 right-3 text-gray-400">⋮</span>
