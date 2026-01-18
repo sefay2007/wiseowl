@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/dist/client/link";
 import { useState } from "react";
 
 const MONTHLY_PRICES = {
@@ -26,13 +27,11 @@ export default function PricingSection() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center px-6 py-20">
-      {/* Header */}
       <h1 className="text-black text-4xl font-semibold mb-4">Try WiseOwl 7 days for free</h1>
       <p className="text-gray-500 max-w-xl text-center mb-10">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
 
-      {/* Toggle */}
       <div className="flex bg-gray-100 rounded-lg p-1 mb-14">
         <button
           onClick={() => setBilling("monthly")}
@@ -52,9 +51,7 @@ export default function PricingSection() {
         </button>
       </div>
 
-      {/* Cards */}
       <div className="text-black grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-        {/* Starter */}
         <PricingCard
           title="Starter"
           price={getPrice(MONTHLY_PRICES.starter)}
@@ -62,7 +59,6 @@ export default function PricingSection() {
           features={features.starter}
         />
 
-        {/* Business */}
         <PricingCard
           title="Business"
           price={getPrice(MONTHLY_PRICES.business)}
@@ -71,7 +67,6 @@ export default function PricingSection() {
           highlighted
         />
 
-        {/* Enterprise */}
         <PricingCard
           title="Enterprise"
           price={getPrice(MONTHLY_PRICES.enterprise)}
@@ -108,21 +103,21 @@ function PricingCard({
         </span>
       )}
 
-<div className="flex items-center gap-2 mb-4">
-  <h3
-    className={`text-lg font-semibold ${
-      highlighted ? "text-blue-600" : "text-blue-600"
-    }`}
-  >
-    {title}
-  </h3>
+        <div className="flex items-center gap-2 mb-4">
+          <h3
+            className={`text-lg font-semibold ${
+              highlighted ? "text-blue-600" : "text-blue-600"
+            }`}
+          >
+            {title}
+          </h3>
 
-  {billing === "annually" && (
-    <span className="text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">
-      -25%
-    </span>
-  )}
-</div>
+          {billing === "annually" && (
+            <span className="text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">
+              -25%
+            </span>
+          )}
+        </div>
 
       <div className="mb-6">
         <span className="text-3xl font-bold">€{price}</span>
@@ -132,13 +127,14 @@ function PricingCard({
       </div>
 
       <button className="bg-blue-600 text-white rounded-md py-2 text-sm font-medium mb-6">
-        Free 7-days Trial
+        <Link href="/register">
+          Free 7-days Trial
+        </Link>
       </button>
 
       <ul className="space-y-3 text-sm text-gray-600">
         {features.map((feature, i) => (
           <li key={i} className="flex items-center gap-3">
-            {/* Icon placeholder */}
             <span className="w-3 h-3 rounded-full bg-gray-300 inline-block" />
             {feature}
           </li>

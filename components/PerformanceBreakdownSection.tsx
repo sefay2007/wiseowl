@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/dist/client/link';
 import Image from 'next/image'
 
 export default function PerformanceBreakdownSection() {
@@ -7,7 +8,6 @@ export default function PerformanceBreakdownSection() {
     <section className="relative overflow-hidden bg-gradient-to-b from-blue-500 to-blue-700 py-28">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* 🔹 TOP – CENTERED HEADER */}
         <div className="text-center max-w-3xl mx-auto text-white mb-20">
           <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
             Know exactly where performance breaks down — and why
@@ -19,10 +19,8 @@ export default function PerformanceBreakdownSection() {
           </p>
         </div>
 
-        {/* 🔹 BOTTOM – 2 COLUMNS */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* LEFT – Dashboard visuals */}
           <div className="relative flex justify-center">
             <div className="relative w-[500px] h-[360px]">
               <Image
@@ -37,7 +35,6 @@ export default function PerformanceBreakdownSection() {
            
           </div>
 
-          {/* RIGHT – Feature text */}
           <div className="text-white space-y-8">
             <Feature
               title="All key performance metrics in one place"
@@ -53,7 +50,9 @@ export default function PerformanceBreakdownSection() {
             />
 
             <button className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-blue-700 font-medium hover:bg-blue-50 transition">
-              Show demo →
+              <Link href="/register">
+                BOOK DEMO →
+              </Link>
             </button>
           </div>
         </div>

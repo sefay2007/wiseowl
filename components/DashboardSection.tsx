@@ -1,7 +1,8 @@
+import Link from "next/dist/client/link";
+
 export default function HeroDashboardSection() {
   return (
     <section className="bg-gradient-to-b from-white via-white to-[#116cf3] py-32">
-      {/* HERO CONTENT */}
       <div className="mx-auto max-w-3xl mb-24 text-center">
         <h1 className="text-[60px] font-bold leading-tight text-gray-900 mb-6">
           <span className="text-[#116cf3]">Understand</span> what really <br />
@@ -15,11 +16,12 @@ export default function HeroDashboardSection() {
         </p>
 
         <button className="inline-flex items-center justify-center rounded-lg bg-[#116cf3] px-7 py-3 text-sm font-semibold text-white hover:bg-[#0e5bd0] transition">
-          BOOK DEMO →
+          <Link href="/register">
+            BOOK DEMO →
+          </Link>
         </button>
       </div>
 
-      {/* DASHBOARD */}
       <div className="flex justify-center">
         <div
           className="
@@ -35,7 +37,6 @@ export default function HeroDashboardSection() {
             p-6
           "
         >
-          {/* Omzet */}
           <div className="rounded-2xl bg-white p-6 text-left shadow-sm hover:shadow-md transition">
             <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">
               Revenue
@@ -43,7 +44,6 @@ export default function HeroDashboardSection() {
             <p className="text-3xl font-bold text-gray-900">€52.247</p>
           </div>
 
-          {/* Conversie */}
           <div className="rounded-2xl bg-white p-6 text-left shadow-sm hover:shadow-md transition">
             <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">
               Conversion
@@ -51,32 +51,29 @@ export default function HeroDashboardSection() {
             <p className="text-3xl font-bold text-[#116cf3]">3.4%</p>
           </div>
 
-          {/* Bezoekers */}
           <div className="col-span-2 rounded-2xl bg-white p-6 text-left shadow-sm hover:shadow-md transition">
             <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">
               Visitors
             </p>
             <p className="text-4xl font-bold text-gray-900">18.483</p>
           </div>
-
-          {/* Sales */}
-<div
-  className="
-    col-start-3
-    row-start-1
-    row-span-2
-    rounded-2xl
-    bg-white
-    p-6
-    text-left
-    shadow-sm
-    hover:shadow-md
-    transition
-    flex
-    flex-col
-    justify-between
-  "
->
+            <div
+              className="
+                col-start-3
+                row-start-1
+                row-span-2
+                rounded-2xl
+                bg-white
+                p-6
+                text-left
+                shadow-sm
+                hover:shadow-md
+                transition
+                flex
+                flex-col
+                justify-between
+              "
+            >
             <p className="text-xs uppercase tracking-wide text-gray-400">
               Sales
             </p>

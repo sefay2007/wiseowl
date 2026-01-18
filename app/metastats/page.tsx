@@ -159,7 +159,6 @@ export default function MetaStatsPage() {
       <Header />
 
       <DashboardLayout>
-        {/* HEADER */}
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-xl font-semibold">Meta Ads Stats</h1>
 
@@ -182,25 +181,24 @@ export default function MetaStatsPage() {
             </Link>
 
             <button
-  className="
-    bg-blue-600 text-white px-4 py-2 rounded-md text-sm
-    transition-all duration-200 ease-out
-    hover:bg-blue-700
-    hover:shadow-md
-    active:translate-y-0
-    active:shadow-sm
-    focus:outline-none
-    cursor-pointer
-    focus:ring-2 focus:ring-blue-400 focus:ring-offset-2
-  "
->
-  + Sync ads from Meta
-</button>
+            className="
+              bg-blue-600 text-white px-4 py-2 rounded-md text-sm
+              transition-all duration-200 ease-out
+              hover:bg-blue-700
+              hover:shadow-md
+              active:translate-y-0
+              active:shadow-sm
+              focus:outline-none
+              cursor-pointer
+              focus:ring-2 focus:ring-blue-400 focus:ring-offset-2
+            "
+          >
+            + Sync ads from Meta
+          </button>
 
           </div>
         </div>
 
-        {/* TABLE HEADER */}
         <div className={`px-4 py-3 grid ${gridCols} gap-4 text-sm font-medium`}>
           {[
             ["name", "Campaign"],
@@ -227,19 +225,16 @@ export default function MetaStatsPage() {
           ))}
         </div>
 
-        {/* ROWS */}
         {sortedCampaigns.map((c) => {
   const showWarning = campaignsWithWarning.includes(c.id);
 
   return (
     <div key={c.id} className="flex items-center">
-      {/* FIXED ICON COLUMN (always same width) */}
       <div className="w-8 flex justify-center">
         {showWarning && (
           <div className="relative group">
             <AlertCircle className="w-5 h-5 text-blue-600 cursor-pointer" />
 
-            {/* Tooltip */}
             <div
               className="
                 absolute left-7 top-1/2 -translate-y-1/2
@@ -254,7 +249,6 @@ export default function MetaStatsPage() {
         )}
       </div>
 
-      {/* CARD (same width for all rows) */}
       <div
         className={`flex-1 mx-2 my-3 rounded-lg border border-gray-200 shadow-sm bg-white px-4 py-8 grid ${gridCols} gap-4 text-sm text-gray-700 items-center`}
       >

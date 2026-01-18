@@ -10,18 +10,10 @@ import RevenueLineChart from "@/components/charts/RevenueLineChart";
 import OrdersDonutChart from "@/components/charts/OrdersDonutChart";
 import { Euro } from "lucide-react";
 
-/* ===============================
-   Types & constants
-================================ */
-
 type Currency = "EUR" | "USD";
 
 const todayISO = new Date().toISOString().split("T")[0];
 const EUR_TO_USD = 1.1;
-
-/* ===============================
-   Helpers
-================================ */
 
 function seededRandom(seed: string) {
   let hash = 0;
@@ -70,10 +62,6 @@ function formatCurrency(
   }).format(value);
 }
 
-/* ===============================
-   Page
-================================ */
-
 export default function DashboardPage() {
   const [selectedDate, setSelectedDate] = useState(todayISO);
   const [currency, setCurrency] = useState<Currency>("EUR");
@@ -82,7 +70,6 @@ export default function DashboardPage() {
   const [stats, setStats] =
     useState<ReturnType<typeof generateStatsForDate> | null>(null);
 
-  /* Load persisted state */
   useEffect(() => {
     const savedDate = localStorage.getItem("dashboard:date");
     const savedCurrency = localStorage.getItem("dashboard:currency");
@@ -93,18 +80,15 @@ export default function DashboardPage() {
     }
   }, []);
 
-  /* Regenerate stats on date change */
   useEffect(() => {
     setStats(generateStatsForDate(selectedDate));
     localStorage.setItem("dashboard:date", selectedDate);
   }, [selectedDate]);
 
-  /* Persist currency */
   useEffect(() => {
     localStorage.setItem("dashboard:currency", currency);
   }, [currency]);
 
-  /* Close currency dropdown on outside click */
   useEffect(() => {
     function close() {
       setCurrencyOpen(false);
@@ -122,7 +106,6 @@ export default function DashboardPage() {
       <Header />
 
       <DashboardLayout>
-        {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           <h1 className="text-xl font-semibold text-black">
             Dashboard
@@ -137,7 +120,6 @@ export default function DashboardPage() {
               onChange={(e) => setSelectedDate(e.target.value)}
             />
 
-            {/* Currency dropdown */}
             <div
               className="relative"
               onClick={(e) => e.stopPropagation()}
@@ -185,7 +167,6 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Top stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
           <StatCard
             title="Spend"
@@ -206,7 +187,6 @@ export default function DashboardPage() {
           <StatCard title="ROAS" value={stats.roas.toFixed(2)} />
         </div>
 
-        {/* Charts */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 h-[420px]">
           <div className="bg-white border border-gray-300 rounded-xl">
             <RevenueLineChart
@@ -227,7 +207,6 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Store stats */}
         <StoreStats
           stats={{
             ...stats,

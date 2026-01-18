@@ -30,7 +30,6 @@ export default function TestimonialsSection() {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Header */}
         <div className="text-center mb-14">
           <h2 className=" text-black text-2xl md:text-3xl font-semibold">
             What <span className="text-blue-600">users</span> say about{' '}
@@ -60,7 +59,6 @@ function ReviewCard({
 }) {
   return (
     <div className="relative rounded-2xl bg-gray-50 p-6 shadow-sm hover:shadow-md transition">
-      {/* Google badge */}
       <div className="absolute top-4 right-4">
         <Image
           src="/img/google-logo.png"
@@ -79,14 +77,12 @@ function ReviewCard({
         </div>
       </div>
 
-      {/* Stars */}
       <div className="flex items-center gap-1 mb-3">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star key={i} />
         ))}
       </div>
 
-      {/* Text */}
       <p className="text-sm text-gray-600 leading-relaxed">
         {text}
       </p>

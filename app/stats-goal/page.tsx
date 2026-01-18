@@ -5,7 +5,6 @@ import DashboardLayout from "@/components/layout/DashboardLayout";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-/* ------------------ DATA ------------------ */
 
 const campaigns = [
   {
@@ -80,7 +79,6 @@ const campaigns = [
   },
 ];
 
-/* ------------------ PAGE ------------------ */
 
 export default function StatsGoalPage() {
   const [selectedCampaign, setSelectedCampaign] = useState(campaigns[0]);
@@ -92,7 +90,6 @@ export default function StatsGoalPage() {
       <DashboardLayout>
         <div className="flex gap-8">
 
-          {/* LEFT SIDEBAR */}
           <aside className="w-64 shrink-0 bg-white border border-gray-200 rounded-2xl p-3 shadow-sm">
             <p className="text-s font-medium text-gray-700 px-3 mb-2">
               Campaigns
@@ -113,10 +110,8 @@ export default function StatsGoalPage() {
             ))}
           </aside>
 
-          {/* MAIN */}
           <main className="flex-1 space-y-8">
 
-            {/* HEADER */}
             <div>
               <h1 className="text-2xl font-semibold text-gray-900">
                 Stats goal
@@ -126,7 +121,6 @@ export default function StatsGoalPage() {
               </p>
             </div>
 
-            {/* GOALS */}
             <div className="grid grid-cols-4 gap-4">
               <GoalCard title="SPENT" value={selectedCampaign.goals.spent} />
               <GoalCard title="CPC" value={selectedCampaign.goals.cpc} />
@@ -134,7 +128,6 @@ export default function StatsGoalPage() {
               <GoalCard title="PURCHASE" value={selectedCampaign.goals.purchase} />
             </div>
 
-            {/* STATS */}
             <section>
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
                 Current performance
@@ -148,10 +141,8 @@ export default function StatsGoalPage() {
                 <StatCard title="CONVERSION" value={selectedCampaign.stats.conversion} />
               </div>
 
-              {/* INSIGHTS + TABLE */}
               <div className="grid grid-cols-2 gap-6">
 
-                {/* INSIGHTS */}
                 <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm space-y-4">
                   <Insight label="Best creative format" value={selectedCampaign.insights.format} />
                   <Insight label="Target audience age" value={selectedCampaign.insights.age} />
@@ -169,7 +160,6 @@ export default function StatsGoalPage() {
                   </div>
                 </div>
 
-                {/* CREATIVES */}
                 <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                   <div className="grid grid-cols-4 text-xs font-medium text-gray-500 pb-3 border-b">
                     <div>CREATIVE</div>
@@ -205,8 +195,6 @@ export default function StatsGoalPage() {
     </div>
   );
 }
-
-/* ------------------ COMPONENTS ------------------ */
 
 function GoalCard({ title, value }: { title: string; value: string }) {
   return (

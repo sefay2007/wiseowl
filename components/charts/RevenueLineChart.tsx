@@ -11,9 +11,6 @@ import {
 
 type Currency = "EUR" | "USD";
 
-/* ===============================
-   Seeded random
-================================ */
 
 function seededRandom(seed: string) {
   let hash = 0;
@@ -25,10 +22,6 @@ function seededRandom(seed: string) {
     return hash / 233280;
   };
 }
-
-/* ===============================
-   Hourly distribution
-================================ */
 
 function generateHourlyRevenue(
   date: string,
@@ -66,10 +59,6 @@ function generateHourlyRevenue(
     };
   });
 }
-
-/* ===============================
-   Component
-================================ */
 
 export default function RevenueLineChart({
   date,

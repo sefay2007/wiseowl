@@ -40,16 +40,13 @@ export default function Sidebar() {
 
   return (
     <aside className="w-64 border-r border-gray-200 bg-white px-4 py-6">
-      {/* Store */}
       <div className="flex items-center gap-2 mb-6 font-semibold text-gray-700">
         <Image src="/img/shopify.png" alt="Shopify" width={16} height={16} />
         AnnaMariusOslo.com
       </div>
 
-      {/* Divider */}
       <div className="my-4 border-t border-gray-200" />
 
-      {/* Menu */}
       <nav className="space-y-1">
         {menuItems.map((item) => {
           const isActive =
@@ -77,10 +74,8 @@ export default function Sidebar() {
         })}
       </nav>
 
-      {/* Divider */}
       <div className="my-6 border-t border-gray-200" />
 
-      {/* External tools */}
       <nav className="space-y-1">
         <a
           href="https://trends.google.com/trends/explore?geo=NL&hl=nl"

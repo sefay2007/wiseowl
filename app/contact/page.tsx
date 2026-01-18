@@ -6,12 +6,10 @@ export default function ContactPage() {
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
 
-      {/* MAIN CONTENT */}
       <main className="flex-1">
         <div className="mx-auto max-w-7xl px-6 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-            {/* LEFT CONTENT */}
             <div>
               <p className="text-sm font-medium text-gray-500 mb-4">
                 Contact us
@@ -44,7 +42,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* RIGHT FORM */}
             <div className="bg-[#F2F6F7] rounded-2xl p-8">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -75,11 +72,9 @@ export default function ContactPage() {
                 </button>
               </form>
             </div>
-
           </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );

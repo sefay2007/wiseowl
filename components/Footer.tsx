@@ -7,11 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-16">
-
-        {/* MAIN GRID */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
-
-          {/* LOGO */}
           <div>
             <div className="flex items-center gap-3">
               <Link href="/">
@@ -25,7 +21,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* FEATURES + PRICING */}
           <div className="text-black space-y-10">
             <FooterColumn title="Features">
               <FooterLink text="Ad Performance Insight" />
@@ -39,7 +34,6 @@ export default function Footer() {
             </FooterColumn>
           </div>
 
-          {/* RESOURCES + CONTACT */}
           <div className="text-black space-y-10">
             <FooterColumn title="Resources">
               <FooterLink text="Ad Performance Insight" />
@@ -53,7 +47,6 @@ export default function Footer() {
             </FooterColumn>
           </div>
 
-          {/* SOCIAL */}
           <div>
             <h4 className="text-black text-sm font-medium mb-4">Social Media</h4>
             <div className="flex items-center gap-3">
@@ -64,7 +57,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* BOTTOM BAR */}
         <div className="mt-16 border-t border-gray-200 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
           <p>© 2026 WiseOwl Platform. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
@@ -81,7 +73,6 @@ export default function Footer() {
   )
 }
 
-/* ---------- helpers ---------- */
 
 function FooterColumn({
   title,

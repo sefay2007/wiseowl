@@ -22,7 +22,6 @@ interface Props {
 export default function CompetitorRow({ data, onDelete }: Props) {
   return (
     <div className="relative">
-      {/* ROW CONTAINER (exact zelfde grid als header) */}
       <div
         className="
           mx-2 my-3 rounded-lg border border-gray-200 shadow-sm bg-white
@@ -31,19 +30,16 @@ export default function CompetitorRow({ data, onDelete }: Props) {
           gap-4 text-sm text-gray-700 items-center
         "
       >
-        {/* Store name */}
         <div className="font-medium text-gray-800">
           {data.name}
         </div>
 
-        {/* Website */}
         <div className="flex justify-center">
           <Link href={data.website} target="_blank">
             <img src="/img/website.png" className="w-6.5 h-auto" />
           </Link>
         </div>
 
-        {/* FB Library */}
         <div className="flex justify-start">
   <Link href={data.fbLibrary} target="_blank">
     <img src="/img/meta.png" className="w-13 h-auto" />
@@ -51,40 +47,33 @@ export default function CompetitorRow({ data, onDelete }: Props) {
 </div>
 
 
-        {/* Live since */}
         <div className="tabular-nums">
           {data.liveSince}
         </div>
 
-        {/* Active ads */}
         <div className="text-center tabular-nums">
           {data.ads}
         </div>
 
-        {/* Number of products */}
         <div className="text-center tabular-nums">
           {data.products}
         </div>
 
-        {/* Country */}
         <div className="text-center font-medium">
           {data.country}
         </div>
 
-        {/* FB profile */}
         <div className="flex justify-center">
           <Link href={data.fbProfile} target="_blank">
             <img src="/img/facebook.png" className="w-7 h-auto" />
           </Link>
         </div>
 
-        {/* FB followers */}
         <div className="text-center tabular-nums">
           {data.followers}
         </div>
       </div>
 
-      {/* DELETE BUTTON — OUTSIDE THE GRID */}
       <button
         onClick={() => onDelete(data.id)}
         className="

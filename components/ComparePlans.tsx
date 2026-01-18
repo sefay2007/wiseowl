@@ -12,7 +12,6 @@ export default function ComparePlans() {
 
   return (
     <section className="py-24 bg-gray-50">
-      {/* Title */}
       <h2 className="text-center text-2xl font-semibold mb-10 text-black">
         Compare plans
       </h2>
@@ -21,7 +20,6 @@ export default function ComparePlans() {
           <div className="overflow-hidden rounded-xl border border-gray-300 bg-white">
 
         <table className="w-full border-gray-300">
-          {/* Header */}
           <thead>
             <tr className="bg-blue-600 text-white text-sm">
               <th className="w-1/3 px-6 py-4 text-left font-medium border-r border-blue-500"></th>
@@ -37,14 +35,12 @@ export default function ComparePlans() {
             </tr>
           </thead>
 
-          {/* Body */}
           <tbody>
             {rows.map((row, i) => (
               <tr
                 key={i}
                 className="border-t border-gray-300 text-sm"
               >
-                {/* Feature name */}
                 <td className="px-6 py-4 text-black border-r border-gray-300">
                   {row.name}
                 </td>

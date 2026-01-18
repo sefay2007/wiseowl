@@ -19,23 +19,20 @@ export default function RegisterPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(form); // later backend / auth
+    console.log(form);
   };
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {/* Header */}
       <header className="flex items-center px-8 py-6">
         <Link href="/">
             <img src="/img/wiseowl-logo.png" alt="WiseOwl Logo" className="h-15 ml-16" />
         </Link>
       </header>
 
-      {/* Content */}
       <div className="flex flex-1 items-center justify-center">
         <div className="w-full max-w-4xl">
           
-          {/* Login link (rechtsboven buiten card) */}
           <div className="flex justify-end mb-2">
             <p className="text-sm text-gray-500">
               Already have account?{" "}
@@ -48,10 +45,8 @@ export default function RegisterPage() {
             </p>
           </div>
 
-          {/* Card */}
           <div className="bg-white rounded-2xl shadow-lg grid grid-cols-1 md:grid-cols-2 overflow-hidden">
             
-            {/* Form */}
             <form onSubmit={handleSubmit} className="p-10">
               <h1 className="text-black text-2xl font-semibold mb-1">
                 Start now for free!
@@ -60,7 +55,6 @@ export default function RegisterPage() {
                 Sign today and benefit of our 7 days free trial
               </p>
 
-              {/* Name + Surname */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label className="block text-sm text-gray-600 mb-1">
@@ -87,7 +81,6 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              {/* Email */}
               <div className="mb-4">
                 <label className="block text-sm text-gray-600 mb-1">
                   Email address
@@ -101,7 +94,6 @@ export default function RegisterPage() {
                 />
               </div>
 
-              {/* Passwords */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div>
                   <label className="block text-sm text-gray-600 mb-1">
@@ -138,7 +130,6 @@ export default function RegisterPage() {
               </button>
             </form>
 
-            {/* Right side image */}
             <div className="hidden md:flex items-center justify-center p-6">
               <Image
                 src="/img/owl.png"

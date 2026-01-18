@@ -30,7 +30,6 @@ export default function Header() {
     <header className="w-full border-b border-gray-200 bg-white">
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6">
         
-        {/* Logo */}
         <Link href="/">
           <Image
             src="/img/wiseowl-logo.png"
@@ -41,7 +40,6 @@ export default function Header() {
           />
         </Link>
 
-        {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
           <Link href="#" className="hover:text-gray-900">
             FEATURES
@@ -57,7 +55,6 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Right side */}
         <div className="flex items-center gap-4 relative">
           {!isLoggedIn ? (
             <>
@@ -77,7 +74,6 @@ export default function Header() {
             </>
           ) : (
             <>
-              {/* Avatar */}
               <button
                 onClick={() => setOpen(!open)}
                 className="w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100 transition cursor-pointer"
@@ -85,26 +81,24 @@ export default function Header() {
                 👤
               </button>
 
-              {/* Dropdown */}
               {open && (
-  <div className="absolute right-0 top-12 w-44 rounded-lg border bg-white shadow-md overflow-hidden">
-    
-    <button
-      onClick={goToDashboard}
-      className="cursor-pointer w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-    >
-      Dashboard
-    </button>
+                <div className="absolute right-0 top-12 w-44 rounded-lg border bg-white shadow-md overflow-hidden">
+                  
+                  <button
+                    onClick={goToDashboard}
+                    className="cursor-pointer w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Dashboard
+                  </button>
 
-    <button
-      onClick={handleLogout}
-      className="cursor-pointer w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
-    >
-      Log out
-    </button>
-  </div>
-)}
-
+                  <button
+                    onClick={handleLogout}
+                    className="cursor-pointer w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                  >
+                    Log out
+                  </button>
+                </div>
+              )}
             </>
           )}
         </div>

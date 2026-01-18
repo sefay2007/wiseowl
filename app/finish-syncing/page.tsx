@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import { useRouter } from "next/navigation";
 
-/* OPTIONS */
 const PRODUCT_TYPES = ["Sweater", "Dress", "Jacket", "Shoes", "Bag", "T-shirt"];
 const GENDERS = ["Woman", "Man", "Unisex"];
 const FORMATS = [
@@ -27,7 +26,6 @@ const CONCEPTS = [
 
 const GRID = "grid-cols-[2fr_1.5fr_1.5fr_1.5fr_1.5fr]";
 
-/* INITIAL DATA */
 const initialGroups = [
   {
     label: "Emily – Sweater",
@@ -122,7 +120,6 @@ export default function FinishSyncingPage() {
       <Header />
 
       <DashboardLayout>
-        {/* TOP BAR */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-xl font-semibold text-gray-900">
@@ -150,7 +147,6 @@ export default function FinishSyncingPage() {
           </div>
         </div>
 
-        {/* TABLE HEADER */}
         <div
           className={`grid ${GRID} px-6 py-3 text-sm font-medium text-gray-700 border-b`}
         >
@@ -161,12 +157,9 @@ export default function FinishSyncingPage() {
           <div>Sale concept</div>
         </div>
 
-        {/* GROUPS */}
         {groups.map((group, groupIndex) => (
           <div key={groupIndex} className="mt-6 relative">
 
-
-            {/* GROUP ROW */}
             <div
               className={`mx-2 my-3 rounded-lg border border-gray-300 bg-blue-500 px-6 py-4 grid ${GRID} gap-4 items-center text-sm`}
             >
@@ -217,18 +210,13 @@ export default function FinishSyncingPage() {
               </select>
             </div>
 
-            {/* CREATIVE ROWS */}
             {group.rows.map((row, rowIndex) => (
               <div
                 key={rowIndex}
                 className={`mx-2 my-2 border border-gray-300 rounded-lg shadow-sm bg-white px-6 py-4 grid ${GRID} gap-4 items-center text-sm`}
               >
-                {/* CAMPAIGN CELL WITH CONNECTORS */}
                 <div className="relative flex items-center  text-gray-800">
-
-                  {/* title */}
                   <span>{row.campaign}</span>
-
                 </div>
 
                 <div />

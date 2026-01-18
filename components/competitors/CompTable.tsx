@@ -79,14 +79,14 @@ export default function AddCompetitorModal({ isOpen, onClose, onAdd }: Props) {
               Cancel
             </button>
             <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm
-    transition-all duration-200 ease-out
-    hover:bg-blue-700
-    hover:shadow-md
-    active:translate-y-0
-    active:shadow-sm
-    focus:outline-none
-    cursor-pointer
-    focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
+              transition-all duration-200 ease-out
+              hover:bg-blue-700
+              hover:shadow-md
+              active:translate-y-0
+              active:shadow-sm
+              focus:outline-none
+              cursor-pointer
+              focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
               Save competitor
             </button>
           </div>

@@ -5,12 +5,10 @@ import { ArrowUpDown } from "lucide-react";
 import CompetitorRow from "./CompetitorRow";
 import { Competitor } from "../../app/types/competitor";
 
-/* ---------- HELPERS ---------- */
 const parseValue = (value: any) => {
   if (typeof value === "number") return value;
 
   if (typeof value === "string") {
-    // datum
     if (!isNaN(Date.parse(value))) {
       return new Date(value).getTime();
     }
@@ -51,7 +49,6 @@ export default function CompetitorsTable({ competitors, onDelete }: Props) {
 
   return (
     <div>
-      {/* HEADER */}
       <div className="grid grid-cols-[2fr_1fr_1.2fr_1.2fr_1fr_1.5fr_0.8fr_1fr_1fr] gap-4 px-4 py-3 text-sm font-medium text-black items-center">
         <button onClick={() => handleSort("storeName")} className="flex items-center gap-1 hover:underline cursor-pointer">
           Store name <ArrowUpDown className="w-3 h-3" />
@@ -83,7 +80,6 @@ export default function CompetitorsTable({ competitors, onDelete }: Props) {
         </button>
       </div>
 
-      {/* ROWS */}
       {sortedCompetitors.length === 0 && (
         <div className="px-4 py-6 text-sm text-gray-500">
           No competitors added yet

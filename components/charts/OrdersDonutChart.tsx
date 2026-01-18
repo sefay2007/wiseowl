@@ -8,11 +8,6 @@ import {
   Tooltip,
 } from "recharts";
 
-/* ===============================
-   Helpers
-================================ */
-
-// Seeded random (deterministisch)
 function seededRandom(seed: string) {
   let hash = 0;
   for (let i = 0; i < seed.length; i++) {
@@ -25,25 +20,17 @@ function seededRandom(seed: string) {
   };
 }
 
-/* ===============================
-   Config
-================================ */
-
 const CATEGORIES = ["Dress", "Jackets", "Shoes", "Accessories"];
 const COLORS = ["#2563eb", "#60a5fa", "#93c5fd", "#bfdbfe"];
 
-/* ===============================
-   Component
-================================ */
 
 export default function OrdersDonutChart({
   totalOrders,
   seed,
 }: {
   totalOrders: number;
-  seed: string; // bv selectedDate
+  seed: string; 
 }) {
-  // deterministische verdeling per datum
   const rand = seededRandom(seed);
 
   const weights = CATEGORIES.map(() => rand());
@@ -54,7 +41,7 @@ export default function OrdersDonutChart({
   const data = CATEGORIES.map((name, i) => {
     const value =
       i === CATEGORIES.length - 1
-        ? remaining // rest naar laatste categorie
+        ? remaining
         : Math.round((weights[i] / weightSum) * totalOrders);
 
     remaining -= value;
@@ -64,7 +51,6 @@ export default function OrdersDonutChart({
 
   return (
     <div className="h-full flex p-6 border border-gray-200 rounded-xl shadow-sm">
-      {/* Chart */}
       <div className="w-1/2 h-full">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
@@ -84,7 +70,6 @@ export default function OrdersDonutChart({
         </ResponsiveContainer>
       </div>
 
-      {/* Legend */}
       <div className="w-1/2 pl-6 flex flex-col justify-center">
         <p className="text-sm text-gray-500 mb-2">Total orders</p>
         <p className="text-black text-2xl font-semibold mb-4">

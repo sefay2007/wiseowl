@@ -52,7 +52,6 @@ export default function HowItWorksSection() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold text-black">
             How <span className="text-blue-600">WiseOwl</span> delivers clarity
@@ -62,9 +61,7 @@ export default function HowItWorksSection() {
           </p>
         </div>
 
-        {/* Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* LEFT: Feature list */}
           <div className="space-y-4">
             {FEATURES.map(feature => {
               const isActive = feature.id === active
@@ -102,9 +99,7 @@ export default function HowItWorksSection() {
             })}
           </div>
 
-          {/* RIGHT: Visual */}
           <div className="relative w-full h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-50 to-white border border-gray-200 shadow-lg">
-            {/* Icon badge */}
             <div className="absolute top-5 left-5 z-10 flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow">
               <ActiveIcon className="h-5 w-5 text-blue-600" />
               <span className="text-sm font-medium text-gray-900">
@@ -112,23 +107,19 @@ export default function HowItWorksSection() {
               </span>
             </div>
 
-            {/* Image */}
             <Image
-  key={activeFeature.image}
-  src={activeFeature.image}
-  alt={activeFeature.title}
-  fill
-  className="
-    object-contain
-    p-10
-    transition-opacity
-    duration-300
-  "
-  priority
-/>
-
-
-            {/* Soft overlay */}
+                key={activeFeature.image}
+                src={activeFeature.image}
+                alt={activeFeature.title}
+                fill
+                className="
+                  object-contain
+                  p-10
+                  transition-opacity
+                  duration-300
+                "
+                priority
+              />
             <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent" />
           </div>
         </div>
